@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap");
+
+:root {
+  --ink: #050b18;
+  --neon: #b91c1c;
+}
+
+html,
+body {
+  background: var(--ink);
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  /* Dégradé animé "propulsé par l'IA" — palette bleue/blanche */
+  .ai-gradient-text {
+    background: linear-gradient(90deg, #1e3a73, #3b6fd9, #ffffff, #1e3a73);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    @apply animate-gradientMove;
+  }
+
+  /* Mot vedette "économiser" — serif rétro/vintage (DM Serif Display) en italique */
+  .neon-word {
+    font-family: "DM Serif Display", Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--neon);
+    text-shadow: 0 0 10px rgba(185, 28, 28, 0.4), 0 0 24px rgba(185, 28, 28, 0.2);
+  }
+}
