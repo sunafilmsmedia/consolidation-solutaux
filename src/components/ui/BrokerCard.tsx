@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { calculatorConfig } from "@/lib/config";
 
 function getInitials(name: string): string {
@@ -11,7 +11,18 @@ function getInitials(name: string): string {
 
 export default function BrokerCard() {
   const [imgError, setImgError] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
   const initials = getInitials(calculatorConfig.brokerName);
+
+  // Si l'image a échoué à charger avant l'hydratation (l'événement "error"
+  // natif de <img> ne remonte pas jusqu'au listener React posé après coup),
+  // on détecte l'échec déjà survenu au montage.
+  useEffect(() => {
+    const img = imgRef.current;
+    if (img && img.complete && img.naturalWidth === 0) {
+      setImgError(true);
+    }
+  }, []);
 
   return (
     <div className="rounded-3xl border border-white/15 bg-white/[0.03] p-5 backdrop-blur">
@@ -25,6 +36,7 @@ export default function BrokerCard() {
           ) : (
             // eslint-disable-next-line @next/next/no-img-element
             <img
+              ref={imgRef}
               src={calculatorConfig.brokerPhotoSrc}
               alt={calculatorConfig.brokerName}
               onError={() => setImgError(true)}
