@@ -1,6 +1,7 @@
 import Thermometer from "@/components/ui/Thermometer";
 import BrokerCard from "@/components/ui/BrokerCard";
 import TrackedLink from "@/components/ui/TrackedLink";
+import { calculatorConfig } from "@/lib/config";
 
 export default function LandingPage() {
   return (
@@ -54,6 +55,10 @@ export default function LandingPage() {
           <BrokerCard />
         </div>
       </div>
+
+      <footer className="mx-auto max-w-[1280px] px-6 pb-8 pt-4 text-center text-xs text-white/40 lg:text-left">
+        {calculatorConfig.brokerName} — {calculatorConfig.brokerAddress}
+      </footer>
     </main>
   );
 }

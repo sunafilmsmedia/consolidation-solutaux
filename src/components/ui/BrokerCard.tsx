@@ -73,6 +73,13 @@ export default function BrokerCard() {
       >
         <span aria-hidden>📞</span> Appeler {calculatorConfig.brokerPhone}
       </a>
+
+      <a
+        href={`mailto:${calculatorConfig.brokerEmail}`}
+        className="mt-2.5 flex h-12 w-full items-center justify-center gap-2 rounded-2xl border border-white/15 text-sm font-semibold text-slate-200 transition hover:bg-white/5"
+      >
+        <span aria-hidden>✉️</span> {calculatorConfig.brokerEmail}
+      </a>
     </div>
   );
 }

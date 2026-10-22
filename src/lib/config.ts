@@ -31,12 +31,15 @@ export const calculatorConfig = {
   // Économie minimale affichée pour éviter d'afficher des micro-montants.
   minimumDisplayedSavings: 50,
 
-  // Coordonnées du courtier — À COMPLÉTER avant mise en ligne (placeholders).
+  // Coordonnées du courtier.
   brokerName: "SoluTaux",
   brokerTitle: "Solutions hypothécaires sur mesure",
-  brokerPhone: "000 000 0000",
-  brokerPhoneTel: "+10000000000",
+  brokerPhone: "(581) 309-3322",
+  brokerPhoneTel: "+15813093322",
+  brokerEmail: "michael@solutaux.ca",
+  brokerAddress: "1020 rue Bouvier, Québec, QC G2K 0K9",
   brokerPhotoSrc: "/broker.jpg",
+  // À COMPLÉTER : lien de prise de rendez-vous (Zoho Bookings, Calendly, etc.)
   calendarLink: "#",
 };
 
