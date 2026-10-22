@@ -5,7 +5,7 @@ import { calculatorConfig } from "@/lib/config";
 
 export default function LandingPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-black via-[#0a1530] to-black text-white">
+    <main className="relative min-h-screen overflow-hidden bg-gradient-to-b from-black via-[#0a1530] to-black text-white">
       {/* En-tête avec logo */}
       <header className="mx-auto flex max-w-[1280px] justify-center px-6 pt-8 lg:justify-start">
         <span className="inline-flex">
@@ -56,9 +56,42 @@ export default function LandingPage() {
         </div>
       </div>
 
-      <footer className="mx-auto max-w-[1280px] px-6 pb-8 pt-4 text-center text-xs text-white/40 lg:text-left">
+      <footer className="relative z-10 mx-auto max-w-[1280px] px-6 pb-8 pt-4 text-center text-xs text-white/40 lg:text-left">
         {calculatorConfig.brokerName} — {calculatorConfig.brokerAddress}
       </footer>
+
+      {/* Décoration : lignes rouges courbées en bas de l'écran */}
+      <svg
+        aria-hidden
+        viewBox="0 0 1440 200"
+        preserveAspectRatio="none"
+        className="pointer-events-none absolute bottom-0 left-0 z-0 h-40 w-full"
+      >
+        <path
+          d="M0 140 C 280 40, 520 180, 820 90 S 1260 10, 1440 70"
+          fill="none"
+          stroke="#B91C1C"
+          strokeWidth="3"
+          strokeLinecap="round"
+          opacity="0.55"
+        />
+        <path
+          d="M0 180 C 320 110, 600 210, 900 140 S 1300 60, 1440 120"
+          fill="none"
+          stroke="#B91C1C"
+          strokeWidth="2"
+          strokeLinecap="round"
+          opacity="0.3"
+        />
+        <path
+          d="M0 110 C 240 170, 560 60, 860 150 S 1220 190, 1440 150"
+          fill="none"
+          stroke="#B91C1C"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          opacity="0.2"
+        />
+      </svg>
     </main>
   );
 }
