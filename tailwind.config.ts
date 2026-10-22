@@ -15,8 +15,8 @@ const config: Config = {
         muted: "#94a3b8",
       },
       fontFamily: {
-        sans: ["Poppins", "system-ui", "sans-serif"],
-        display: ["Fredoka", "Poppins", "sans-serif"],
+        sans: ["Arial Black", "Arial Bold", "Arial", "sans-serif"],
+        display: ["Pirata One", "serif"],
       },
       boxShadow: {
         card: "0 10px 40px -12px rgba(0, 0, 0, 0.6)",
