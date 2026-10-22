@@ -15,7 +15,7 @@ const config: Config = {
         muted: "#94a3b8",
       },
       fontFamily: {
-        sans: ["Arial Black", "Arial Bold", "Arial", "sans-serif"],
+        sans: ["Montserrat", "system-ui", "sans-serif"],
         display: ["Pirata One", "serif"],
       },
       boxShadow: {
