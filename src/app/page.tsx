@@ -7,53 +7,51 @@ export default function LandingPage() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-gradient-to-b from-black via-[#0a1530] to-black text-white">
       {/* En-tête avec logo */}
-      <header className="mx-auto flex max-w-[1280px] justify-center px-6 pt-8 lg:justify-start">
+      <header className="mx-auto flex max-w-[1280px] justify-center px-6 pt-8">
         <span className="inline-flex">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/logo.png" alt="SoluTaux" className="h-12 w-auto" />
         </span>
       </header>
 
-      <div className="mx-auto flex max-w-[1280px] flex-col gap-12 px-6 py-10 lg:flex-row lg:items-center lg:py-16">
-        {/* Colonne gauche */}
-        <div className="flex-1 animate-fadeUp text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold text-slate-200">
-            <span className="h-2 w-2 rounded-full bg-savings" />
-            Gratuit • Sans engagement • Aucun impact sur ton crédit
-          </span>
+      {/* Titre centré */}
+      <div className="mx-auto max-w-[760px] animate-fadeUp px-6 py-10 text-center lg:py-16">
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold text-slate-200">
+          <span className="h-2 w-2 rounded-full bg-savings" />
+          Gratuit • Sans engagement • Aucun impact sur ton crédit
+        </span>
 
-          <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-            Combien pourrais-tu{" "}
-            <span className="neon-word inline-block pr-1 align-baseline text-[1.15em] leading-none">
-              économiser
-            </span>{" "}
-            en consolidant tes dettes?
-          </h1>
+        <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+          Combien pourrais-tu{" "}
+          <span className="neon-word inline-block pr-1 align-baseline text-[1.15em] leading-none">
+            économiser
+          </span>{" "}
+          en consolidant tes dettes?
+        </h1>
 
-          <p className="ai-gradient-text mt-6 text-lg font-semibold">
-            Analyse intelligente propulsée par l&apos;IA
-          </p>
+        <p className="ai-gradient-text mt-6 text-lg font-semibold">
+          Analyse intelligente propulsée par l&apos;IA
+        </p>
 
-          <div className="mt-8 flex justify-center">
-            <TrackedLink
-              href="/calculator"
-              event="ViewContent"
-              className="inline-flex h-14 w-full items-center justify-center rounded-2xl bg-gradient-to-r from-brand to-ai px-8 text-base font-extrabold text-white shadow-glow transition hover:brightness-110 sm:w-auto"
-            >
-              Calculer mon potentiel d&apos;économie
-            </TrackedLink>
-          </div>
-
-          <p className="mt-4 text-sm text-slate-400">
-            Gratuit. Sans engagement. Aucun impact sur ton crédit.
-          </p>
+        <div className="mt-8 flex justify-center">
+          <TrackedLink
+            href="/calculator"
+            event="ViewContent"
+            className="inline-flex h-14 w-full items-center justify-center rounded-2xl bg-white px-8 text-base font-extrabold text-brand shadow-glow transition hover:bg-white/90 sm:w-auto"
+          >
+            Calculer mon potentiel d&apos;économie
+          </TrackedLink>
         </div>
 
-        {/* Colonne droite */}
-        <div className="flex w-full flex-col gap-4 lg:w-[40%]">
-          <Thermometer score={0} level={null} hasEnoughInfo={false} />
-          <BrokerCard />
-        </div>
+        <p className="mt-4 text-sm text-slate-400">
+          Gratuit. Sans engagement. Aucun impact sur ton crédit.
+        </p>
+      </div>
+
+      {/* Potentiel + coordonnées, tout en bas */}
+      <div className="mx-auto flex w-full max-w-[520px] flex-col gap-4 px-6 pb-16">
+        <Thermometer score={0} level={null} hasEnoughInfo={false} />
+        <BrokerCard />
       </div>
 
       <footer className="relative z-10 mx-auto max-w-[1280px] px-6 pb-8 pt-4 text-center text-xs text-white/40 lg:text-left">

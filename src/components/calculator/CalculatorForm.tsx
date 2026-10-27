@@ -192,7 +192,7 @@ export default function CalculatorForm() {
             </button>
             <Link
               href="/"
-              className="inline-flex h-12 items-center justify-center rounded-2xl bg-gradient-to-r from-brand to-ai px-6 text-sm font-extrabold text-white shadow-glow transition hover:brightness-110"
+              className="inline-flex h-12 items-center justify-center rounded-2xl bg-white px-6 text-sm font-extrabold text-brand shadow-glow transition hover:bg-white/90"
             >
               Retour à l&apos;accueil
             </Link>
@@ -257,7 +257,7 @@ export default function CalculatorForm() {
               <button
                 onClick={handleSubmit}
                 disabled={!canContinue}
-                className="h-14 flex-1 rounded-2xl bg-gradient-to-r from-brand to-ai px-8 text-base font-extrabold text-white shadow-glow transition enabled:hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
+                className="h-14 flex-1 rounded-2xl bg-white px-8 text-base font-extrabold text-brand shadow-glow transition enabled:hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-40"
               >
                 Voir mon résultat IA
               </button>
@@ -267,7 +267,7 @@ export default function CalculatorForm() {
               <button
                 onClick={goNext}
                 disabled={!canContinue}
-                className="h-14 flex-1 rounded-2xl bg-gradient-to-r from-brand to-ai px-8 text-base font-extrabold text-white shadow-glow transition enabled:hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
+                className="h-14 flex-1 rounded-2xl bg-white px-8 text-base font-extrabold text-brand shadow-glow transition enabled:hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-40"
               >
                 Continuer
               </button>

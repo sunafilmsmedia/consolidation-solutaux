@@ -62,7 +62,7 @@ export default function BrokerCard() {
         href={calculatorConfig.calendarLink}
         target="_blank"
         rel="noreferrer"
-        className="mt-4 flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-brand to-ai text-sm font-extrabold text-white shadow-glow transition hover:brightness-110"
+        className="mt-4 flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-white text-sm font-extrabold text-brand shadow-glow transition hover:bg-white/90"
       >
         <span aria-hidden>📅</span> Prendre rendez-vous
       </a>

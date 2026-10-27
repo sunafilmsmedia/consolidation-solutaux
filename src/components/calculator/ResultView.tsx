@@ -51,7 +51,7 @@ export default function ResultView({ leadId }: { leadId: string }) {
           </p>
           <Link
             href="/calculator"
-            className="mt-6 inline-flex h-12 items-center rounded-2xl bg-gradient-to-r from-brand to-ai px-6 font-extrabold text-white"
+            className="mt-6 inline-flex h-12 items-center rounded-2xl bg-white px-6 font-extrabold text-brand"
           >
             Recommencer
           </Link>
@@ -182,7 +182,7 @@ export default function ResultView({ leadId }: { leadId: string }) {
             href={calculatorConfig.calendarLink}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-14 flex-1 items-center justify-center rounded-2xl bg-gradient-to-r from-brand to-ai px-6 text-base font-extrabold text-white shadow-glow transition hover:brightness-110"
+            className="inline-flex h-14 flex-1 items-center justify-center rounded-2xl bg-white px-6 text-base font-extrabold text-brand shadow-glow transition hover:bg-white/90"
           >
             Valider mon résultat avec un courtier
           </a>
