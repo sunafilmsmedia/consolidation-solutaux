@@ -1,5 +1,3 @@
-import Thermometer from "@/components/ui/Thermometer";
-import BrokerCard from "@/components/ui/BrokerCard";
 import TrackedLink from "@/components/ui/TrackedLink";
 import { calculatorConfig } from "@/lib/config";
 
@@ -48,15 +46,9 @@ export default function LandingPage() {
         </p>
       </div>
 
-      <footer className="relative z-10 mx-auto max-w-[1280px] px-6 pb-8 pt-4 text-center text-xs text-ink/40 lg:text-left">
+      <footer className="relative z-10 mx-auto max-w-[1280px] px-6 pb-16 pt-4 text-center text-xs text-ink/40 lg:text-left">
         {calculatorConfig.brokerName} — {calculatorConfig.brokerAddress}
       </footer>
-
-      {/* Potentiel + coordonnées, tout à la fin */}
-      <div className="relative z-10 mx-auto flex w-full max-w-[520px] flex-col gap-4 px-6 pb-16">
-        <Thermometer score={0} level={null} hasEnoughInfo={false} />
-        <BrokerCard />
-      </div>
 
       {/* Décoration : lignes rouges courbées en bas de l'écran */}
       <svg
