@@ -152,7 +152,7 @@ export default function CalculatorForm() {
 
   if (submitting) {
     return (
-      <main className="min-h-screen bg-gradient-to-b from-black via-[#0a1530] to-black text-white">
+      <main className="min-h-screen bg-white text-ink">
         <LoadingAI />
       </main>
     );
@@ -162,21 +162,21 @@ export default function CalculatorForm() {
   // s'applique pas. On arrête le parcours ici, sans générer de lead.
   if (notOwner) {
     return (
-      <main className="flex min-h-screen items-center justify-center bg-gradient-to-b from-black via-[#0a1530] to-black px-6 text-white">
+      <main className="flex min-h-screen items-center justify-center bg-white px-6 text-ink">
         <div className="max-w-lg animate-fadeUp text-center">
-          <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-white/15 bg-white/5 text-2xl">
+          <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-ink/15 bg-ink/5 text-2xl">
             🔑
           </span>
           <h1 className="mt-6 text-2xl font-extrabold leading-tight sm:text-3xl">
             Cet outil est conçu pour les propriétaires
           </h1>
-          <p className="mt-4 text-base leading-relaxed text-slate-300">
+          <p className="mt-4 text-base leading-relaxed text-slate-600">
             La consolidation par un courtier hypothécaire repose sur l&apos;équité de ta
             propriété : on refinance l&apos;hypothèque pour rembourser tes autres dettes et te
             ramener à un seul paiement. Sans propriété, cette avenue ne s&apos;applique
             malheureusement pas.
           </p>
-          <p className="mt-3 text-sm text-slate-400">
+          <p className="mt-3 text-sm text-slate-500">
             Si tu deviens propriétaire un jour, ou si tu as une propriété au nom d&apos;un proche,
             reviens nous voir — {calculatorConfig.brokerName} pourra analyser tes options.
           </p>
@@ -186,13 +186,13 @@ export default function CalculatorForm() {
                 update({ ownership: undefined });
                 setStepIndex(0);
               }}
-              className="inline-flex h-12 items-center justify-center rounded-2xl border border-white/15 px-6 text-sm font-semibold text-slate-200 transition hover:bg-white/5"
+              className="inline-flex h-12 items-center justify-center rounded-2xl border border-ink/15 px-6 text-sm font-semibold text-slate-600 transition hover:bg-ink/5"
             >
               Revenir en arrière
             </button>
             <Link
               href="/"
-              className="inline-flex h-12 items-center justify-center rounded-2xl bg-white px-6 text-sm font-extrabold text-brand shadow-glow transition hover:bg-white/90"
+              className="inline-flex h-12 items-center justify-center rounded-2xl bg-gradient-to-r from-brand to-ai px-6 text-sm font-extrabold text-white shadow-glow transition hover:brightness-110"
             >
               Retour à l&apos;accueil
             </Link>
@@ -203,13 +203,13 @@ export default function CalculatorForm() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-black via-[#0a1530] to-black text-white">
+    <main className="min-h-screen bg-white text-ink">
       <div className="mx-auto grid max-w-[1280px] gap-10 px-6 py-10 lg:grid-cols-[1fr_360px] lg:py-16">
         <div>
           {/* Estimation en direct — visible en haut sur mobile seulement */}
           {showMobilePreview && (
             <div className="sticky top-3 z-20 mb-5 lg:hidden">
-              <div className="rounded-2xl border border-neon/30 bg-[#0a1530]/90 px-4 py-3 text-center shadow-glow backdrop-blur">
+              <div className="rounded-2xl border border-neon/30 bg-white/90 px-4 py-3 text-center shadow-glow backdrop-blur">
                 <span className="ai-gradient-text text-[10px] font-bold uppercase tracking-wide">
                   Estimation en direct
                 </span>
@@ -217,9 +217,9 @@ export default function CalculatorForm() {
                   <span className="select-none blur-[7px]">
                     {formatCurrency(previewLow)} – {formatCurrency(previewHigh)}
                   </span>
-                  <span className="ml-1 text-xs font-semibold text-white/60">/ mois</span>
+                  <span className="ml-1 text-xs font-semibold text-ink/60">/ mois</span>
                 </p>
-                <p className="mt-0.5 text-[10px] font-medium text-white/50">
+                <p className="mt-0.5 text-[10px] font-medium text-ink/50">
                   🔒 Débloque le montant à la fin
                 </p>
               </div>
@@ -239,7 +239,7 @@ export default function CalculatorForm() {
           </div>
 
           {error && (
-            <p className="mt-4 rounded-xl border border-alert/40 bg-alert/10 px-4 py-3 text-sm text-orange-200">
+            <p className="mt-4 rounded-xl border border-alert/40 bg-alert/10 px-4 py-3 text-sm text-orange-700">
               {error}
             </p>
           )}
@@ -248,7 +248,7 @@ export default function CalculatorForm() {
             {clampedIndex > 0 && (
               <button
                 onClick={goBack}
-                className="h-14 rounded-2xl border border-white/15 px-6 text-sm font-semibold text-slate-200 transition hover:bg-white/5"
+                className="h-14 rounded-2xl border border-ink/15 px-6 text-sm font-semibold text-slate-600 transition hover:bg-ink/5"
               >
                 Retour
               </button>
@@ -257,17 +257,17 @@ export default function CalculatorForm() {
               <button
                 onClick={handleSubmit}
                 disabled={!canContinue}
-                className="h-14 flex-1 rounded-2xl bg-white px-8 text-base font-extrabold text-brand shadow-glow transition enabled:hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-40"
+                className="h-14 flex-1 rounded-2xl bg-gradient-to-r from-brand to-ai px-8 text-base font-extrabold text-white shadow-glow transition enabled:hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
               >
                 Voir mon résultat IA
               </button>
             ) : isAutoAdvance ? (
-              <p className="text-sm text-white/40">Touche une réponse pour continuer →</p>
+              <p className="text-sm text-ink/40">Touche une réponse pour continuer →</p>
             ) : (
               <button
                 onClick={goNext}
                 disabled={!canContinue}
-                className="h-14 flex-1 rounded-2xl bg-white px-8 text-base font-extrabold text-brand shadow-glow transition enabled:hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-40"
+                className="h-14 flex-1 rounded-2xl bg-gradient-to-r from-brand to-ai px-8 text-base font-extrabold text-white shadow-glow transition enabled:hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
               >
                 Continuer
               </button>
@@ -493,7 +493,7 @@ function StepTitle({ title, subtitle }: { title: string; subtitle?: string }) {
   return (
     <div className="mb-6">
       <h2 className="text-2xl font-extrabold leading-tight sm:text-3xl">{title}</h2>
-      {subtitle && <p className="mt-2 text-sm text-slate-400">{subtitle}</p>}
+      {subtitle && <p className="mt-2 text-sm text-slate-500">{subtitle}</p>}
     </div>
   );
 }
@@ -613,14 +613,14 @@ function OptionButton({
       onClick={onClick}
       className={`flex items-center gap-3 rounded-2xl border px-5 py-4 text-left text-sm font-semibold transition ${
         selected
-          ? "border-ai bg-ai/15 text-white shadow-glow"
-          : "border-white/12 bg-white/5 text-slate-200 hover:border-white/30 hover:bg-white/10"
+          ? "border-ai bg-ai/15 text-ink shadow-glow"
+          : "border-ink/12 bg-ink/5 text-slate-700 hover:border-ink/30 hover:bg-ink/10"
       }`}
     >
       <span
         className={`flex h-5 w-5 shrink-0 items-center justify-center border text-[10px] ${
           multi ? "rounded-md" : "rounded-full"
-        } ${selected ? "border-ai bg-ai text-white" : "border-white/30"}`}
+        } ${selected ? "border-ai bg-ai text-white" : "border-ink/30"}`}
       >
         {selected ? "✓" : ""}
       </span>
@@ -663,7 +663,7 @@ function NumberWithUnknown({
             const digits = e.target.value.replace(/[^\d]/g, "");
             onValue(digits ? Number(digits) : undefined);
           }}
-          className="h-14 w-full rounded-2xl border border-white/15 bg-white/5 px-5 text-lg text-white placeholder:text-slate-500 focus:border-ai focus:outline-none disabled:opacity-40"
+          className="h-14 w-full rounded-2xl border border-ink/15 bg-ink/5 px-5 text-lg text-ink placeholder:text-slate-400 focus:border-ai focus:outline-none disabled:opacity-40"
         />
       </div>
       {greenHint && (
@@ -675,8 +675,8 @@ function NumberWithUnknown({
             onClick={onUnknown}
             className={`mt-4 rounded-xl border px-4 py-2 text-sm font-medium transition ${
               unknown
-                ? "border-ai bg-ai/15 text-white"
-                : "border-white/15 text-slate-300 hover:bg-white/5"
+                ? "border-ai bg-ai/15 text-ink"
+                : "border-ink/15 text-slate-600 hover:bg-ink/5"
             }`}
           >
             Je ne sais pas
@@ -713,19 +713,19 @@ function ContactStep({
         </span>
         {hasSavings ? (
           <>
-            <p className="mt-1 text-sm text-white/70">Tu pourrais potentiellement économiser</p>
+            <p className="mt-1 text-sm text-ink/70">Tu pourrais potentiellement économiser</p>
             <p className="mt-0.5 text-2xl font-extrabold text-neon sm:text-3xl">
               <span className="select-none blur-[8px]">
                 {formatCurrency(low)} – {formatCurrency(high)}
               </span>
-              <span className="ml-1 text-sm font-semibold text-white/60">/ mois</span>
+              <span className="ml-1 text-sm font-semibold text-ink/60">/ mois</span>
             </p>
             <p className="mt-1.5 text-xs font-semibold text-neon">
               🔒 Laisse tes coordonnées ci-dessous pour dévoiler ton montant
             </p>
           </>
         ) : (
-          <p className="mt-1 text-sm text-white/70">
+          <p className="mt-1 text-sm text-ink/70">
             Ta situation mérite une analyse plus poussée — une consolidation pourrait
             simplifier tes paiements.
           </p>
@@ -736,7 +736,7 @@ function ContactStep({
       <h2 className="mt-4 text-lg font-extrabold leading-tight">
         Vérifie si c&apos;est possible pour toi
       </h2>
-      <p className="mt-0.5 text-xs text-white/50">
+      <p className="mt-0.5 text-xs text-ink/50">
         Laisse tes coordonnées : {calculatorConfig.brokerName} analyse ton dossier et te confirme tes vraies options.
         Gratuit, sans engagement.
       </p>
@@ -761,12 +761,12 @@ function ContactStep({
         />
       </div>
 
-      <label className="mt-3 flex cursor-pointer items-start gap-2 text-xs text-slate-300">
+      <label className="mt-3 flex cursor-pointer items-start gap-2 text-xs text-slate-600">
         <input
           type="checkbox"
           checked={answers.consentContact === true}
           onChange={(e) => update({ consentContact: e.target.checked })}
-          className="mt-0.5 h-4 w-4 rounded border-white/30 accent-ai"
+          className="mt-0.5 h-4 w-4 rounded border-ink/30 accent-ai"
         />
         J&apos;accepte d&apos;être contacté au sujet de mon analyse et de mes options de
         consolidation.
@@ -788,14 +788,14 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mb-1 block text-[11px] font-semibold uppercase tracking-wide text-slate-400">
+      <span className="mb-1 block text-[11px] font-semibold uppercase tracking-wide text-slate-500">
         {label}
       </span>
       <input
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-xl border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-ai focus:outline-none"
+        className="w-full rounded-xl border border-ink/15 bg-ink/5 px-3.5 py-2.5 text-sm text-ink placeholder:text-slate-400 focus:border-ai focus:outline-none"
       />
     </label>
   );

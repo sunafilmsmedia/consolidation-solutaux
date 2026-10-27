@@ -34,7 +34,7 @@ export default function Thermometer({
 
   return (
     <div
-      className={`relative rounded-3xl border border-white/15 bg-white/[0.03] p-6 backdrop-blur ${
+      className={`relative rounded-3xl border border-ink/15 bg-ink/[0.03] p-6 backdrop-blur ${
         compact ? "" : "shadow-card"
       }`}
     >
@@ -47,7 +47,7 @@ export default function Thermometer({
 
       <div className={`mt-5 flex items-end gap-5 ${compact ? "" : "min-h-[220px]"}`}>
         {/* Jauge verticale */}
-        <div className="relative h-44 w-7 overflow-hidden rounded-full bg-white/10">
+        <div className="relative h-44 w-7 overflow-hidden rounded-full bg-ink/10">
           <div
             className="absolute bottom-0 left-0 w-full rounded-full transition-all duration-700 ease-out"
             style={{
@@ -58,15 +58,15 @@ export default function Thermometer({
         </div>
 
         <div className="flex-1">
-          <div className="text-2xl font-extrabold text-white transition-colors" style={{ color }}>
+          <div className="text-2xl font-extrabold text-ink transition-colors" style={{ color }}>
             {label}
           </div>
-          <p className="mt-2 text-sm leading-relaxed text-slate-300">{description}</p>
+          <p className="mt-2 text-sm leading-relaxed text-slate-600">{description}</p>
         </div>
       </div>
 
       {hasEnoughInfo && (
-        <div className="mt-4 text-right text-xs text-slate-400">
+        <div className="mt-4 text-right text-xs text-slate-500">
           Indice de potentiel : {Math.round(score)} / 100
         </div>
       )}

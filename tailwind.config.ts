@@ -9,7 +9,7 @@ const config: Config = {
         brand: "#1E3A73", // bleu foncé SoluTaux (principal)
         ai: "#3B6FD9", // bleu plus clair (partenaire de dégradé / interactif)
         neon: "#B91C1C", // rouge foncé SoluTaux (accents logo)
-        savings: "#5B9CFF",
+        savings: "#1D4ED8",
         alert: "#F97316",
         surface: "#0A1530",
         muted: "#94a3b8",

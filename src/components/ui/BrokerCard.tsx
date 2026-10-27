@@ -25,7 +25,7 @@ export default function BrokerCard() {
   }, []);
 
   return (
-    <div className="rounded-3xl border border-white/15 bg-white/[0.03] p-5 backdrop-blur">
+    <div className="rounded-3xl border border-ink/15 bg-ink/[0.03] p-5 backdrop-blur">
       <div className="flex items-center gap-4">
         {/* Avatar + pastille en ligne */}
         <div className="relative shrink-0">
@@ -43,7 +43,7 @@ export default function BrokerCard() {
               className="h-16 w-16 rounded-full object-cover ring-2 ring-neon/60"
             />
           )}
-          <span className="absolute -bottom-0.5 -right-0.5 h-4 w-4 rounded-full border-2 border-black bg-neon shadow-neon" />
+          <span className="absolute -bottom-0.5 -right-0.5 h-4 w-4 rounded-full border-2 border-white bg-neon shadow-neon" />
         </div>
 
         <div className="min-w-0 flex-1">
@@ -53,8 +53,8 @@ export default function BrokerCard() {
               En ligne
             </span>
           </div>
-          <p className="mt-1.5 truncate text-base font-extrabold text-white">{calculatorConfig.brokerName}</p>
-          <p className="truncate text-xs text-white/60">{calculatorConfig.brokerTitle}</p>
+          <p className="mt-1.5 truncate text-base font-extrabold text-ink">{calculatorConfig.brokerName}</p>
+          <p className="truncate text-xs text-ink/60">{calculatorConfig.brokerTitle}</p>
         </div>
       </div>
 
@@ -62,21 +62,21 @@ export default function BrokerCard() {
         href={calculatorConfig.calendarLink}
         target="_blank"
         rel="noreferrer"
-        className="mt-4 flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-white text-sm font-extrabold text-brand shadow-glow transition hover:bg-white/90"
+        className="mt-4 flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-brand to-ai text-sm font-extrabold text-white shadow-glow transition hover:brightness-110"
       >
         <span aria-hidden>📅</span> Prendre rendez-vous
       </a>
 
       <a
         href={`tel:${calculatorConfig.brokerPhoneTel}`}
-        className="mt-2.5 flex h-12 w-full items-center justify-center gap-2 rounded-2xl border border-white/15 text-sm font-semibold text-slate-200 transition hover:bg-white/5"
+        className="mt-2.5 flex h-12 w-full items-center justify-center gap-2 rounded-2xl border border-ink/15 text-sm font-semibold text-slate-600 transition hover:bg-ink/5"
       >
         <span aria-hidden>📞</span> Appeler {calculatorConfig.brokerPhone}
       </a>
 
       <a
         href={`mailto:${calculatorConfig.brokerEmail}`}
-        className="mt-2.5 flex h-12 w-full items-center justify-center gap-2 rounded-2xl border border-white/15 text-sm font-semibold text-slate-200 transition hover:bg-white/5"
+        className="mt-2.5 flex h-12 w-full items-center justify-center gap-2 rounded-2xl border border-ink/15 text-sm font-semibold text-slate-600 transition hover:bg-ink/5"
       >
         <span aria-hidden>✉️</span> {calculatorConfig.brokerEmail}
       </a>

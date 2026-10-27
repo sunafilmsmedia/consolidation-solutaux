@@ -42,16 +42,16 @@ export default function ResultView({ leadId }: { leadId: string }) {
 
   if (loaded && !data) {
     return (
-      <main className="flex min-h-screen items-center justify-center bg-ink px-6 text-center text-white">
+      <main className="flex min-h-screen items-center justify-center bg-white px-6 text-center text-ink">
         <div>
           <h1 className="text-2xl font-bold">Résultat introuvable</h1>
-          <p className="mt-3 text-slate-400">
+          <p className="mt-3 text-slate-500">
             Ton résultat n&apos;est plus disponible. Tu peux refaire l&apos;analyse en quelques
             minutes.
           </p>
           <Link
             href="/calculator"
-            className="mt-6 inline-flex h-12 items-center rounded-2xl bg-white px-6 font-extrabold text-brand"
+            className="mt-6 inline-flex h-12 items-center rounded-2xl bg-gradient-to-r from-brand to-ai px-6 font-extrabold text-white"
           >
             Recommencer
           </Link>
@@ -61,7 +61,7 @@ export default function ResultView({ leadId }: { leadId: string }) {
   }
 
   if (!data) {
-    return <main className="min-h-screen bg-ink" />;
+    return <main className="min-h-screen bg-white" />;
   }
 
   const { result, firstName } = data;
@@ -70,7 +70,7 @@ export default function ResultView({ leadId }: { leadId: string }) {
   const level = LEVEL_LABELS[result.potentialLevel];
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-black via-[#0a1530] to-black text-white">
+    <main className="min-h-screen bg-white text-ink">
       <div className="mx-auto max-w-3xl px-6 py-14">
         <div className="animate-fadeUp">
           <span className="ai-gradient-text text-sm font-bold uppercase tracking-wide">
@@ -79,7 +79,7 @@ export default function ResultView({ leadId }: { leadId: string }) {
           <h1 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">
             {firstName} — {tier.headline}.
           </h1>
-          <p className="mt-4 text-lg text-slate-300">
+          <p className="mt-4 text-lg text-slate-600">
             {showFigures
               ? `Selon les informations fournies, tu pourrais potentiellement économiser environ ${formatCurrency(
                   result.estimatedMonthlySavings
@@ -94,17 +94,17 @@ export default function ResultView({ leadId }: { leadId: string }) {
             <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-neon/20 text-neon">
               ✓
             </span>
-            <p className="text-sm leading-relaxed text-white sm:text-base">
+            <p className="text-sm leading-relaxed text-ink sm:text-base">
               Tu recevras une réponse précise lors de ton appel avec {calculatorConfig.brokerName}.
               Nous allons analyser ton dossier en détail et te rappeler dans les prochaines heures.
             </p>
           </div>
         ) : (
-          <div className="mt-6 flex items-start gap-3 rounded-2xl border border-white/15 bg-white/5 p-5">
-            <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/10 text-slate-200">
+          <div className="mt-6 flex items-start gap-3 rounded-2xl border border-ink/15 bg-ink/5 p-5">
+            <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-ink/10 text-slate-600">
               i
             </span>
-            <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+            <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
               {tier.message}
             </p>
           </div>
@@ -113,13 +113,13 @@ export default function ResultView({ leadId }: { leadId: string }) {
         {/* Montant disponible via l'équité — cœur de la logique de consolidation */}
         {result.potentialCashAvailable !== undefined && result.potentialCashAvailable > 0 && (
           <div className="mt-6 rounded-2xl border border-ai/30 bg-ai/5 p-5">
-            <div className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+            <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">
               Montant potentiellement disponible via ton équité
             </div>
             <div className="mt-1 text-3xl font-extrabold text-ai">
               {formatCurrency(result.potentialCashAvailable)}
             </div>
-            <p className="mt-2 text-sm leading-relaxed text-slate-300">
+            <p className="mt-2 text-sm leading-relaxed text-slate-600">
               Estimé à partir de 80 % de la valeur de ta propriété, moins ton solde hypothécaire.
               C&apos;est le montant qui pourrait servir à rembourser tes autres dettes et à les
               regrouper dans un seul paiement.
@@ -148,11 +148,11 @@ export default function ResultView({ leadId }: { leadId: string }) {
         </div>
 
         {/* Réponse IA */}
-        <div className="mt-8 rounded-3xl border border-white/10 bg-white/5 p-6">
+        <div className="mt-8 rounded-3xl border border-ink/10 bg-ink/5 p-6">
           <h2 className="mb-3 flex items-center gap-2 text-lg font-bold">
             <span>⚡</span> Ton analyse personnalisée
           </h2>
-          <div className="space-y-3 text-sm leading-relaxed text-slate-200">
+          <div className="space-y-3 text-sm leading-relaxed text-slate-600">
             {result.aiResponse.split("\n").map((line, i) =>
               line.trim() === "" ? (
                 <div key={i} className="h-1" />
@@ -164,7 +164,7 @@ export default function ResultView({ leadId }: { leadId: string }) {
         </div>
 
         {/* Disclaimer */}
-        <p className="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-xs leading-relaxed text-slate-400">
+        <p className="mt-6 rounded-2xl border border-ink/10 bg-ink/[0.03] p-4 text-xs leading-relaxed text-slate-500">
           Cette estimation est fournie à titre informatif seulement. Elle ne constitue pas une
           approbation hypothécaire, une offre de financement ou un conseil financier personnalisé.
           Les résultats réels peuvent varier selon votre dossier, votre crédit, vos revenus, la
@@ -182,13 +182,13 @@ export default function ResultView({ leadId }: { leadId: string }) {
             href={calculatorConfig.calendarLink}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-14 flex-1 items-center justify-center rounded-2xl bg-white px-6 text-base font-extrabold text-brand shadow-glow transition hover:bg-white/90"
+            className="inline-flex h-14 flex-1 items-center justify-center rounded-2xl bg-gradient-to-r from-brand to-ai px-6 text-base font-extrabold text-white shadow-glow transition hover:brightness-110"
           >
             Valider mon résultat avec un courtier
           </a>
           <Link
             href="/thank-you"
-            className="inline-flex h-14 flex-1 items-center justify-center rounded-2xl border border-white/15 px-6 text-base font-semibold text-slate-200 transition hover:bg-white/5"
+            className="inline-flex h-14 flex-1 items-center justify-center rounded-2xl border border-ink/15 px-6 text-base font-semibold text-slate-600 transition hover:bg-ink/5"
           >
             Recevoir mon analyse par courriel
           </Link>
@@ -208,10 +208,10 @@ function ResultCard({
   accent: "savings" | "ai" | "brand";
 }) {
   const accentClass =
-    accent === "savings" ? "text-savings" : accent === "ai" ? "text-ai" : "text-white";
+    accent === "savings" ? "text-savings" : accent === "ai" ? "text-ai" : "text-ink";
   return (
-    <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-      <div className="text-xs font-semibold uppercase tracking-wide text-slate-400">{label}</div>
+    <div className="rounded-3xl border border-ink/10 bg-ink/5 p-6">
+      <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">{label}</div>
       <div className={`mt-2 text-2xl font-extrabold ${accentClass}`}>{value}</div>
     </div>
   );

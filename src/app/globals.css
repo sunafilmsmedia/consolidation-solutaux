@@ -11,15 +11,15 @@
 
 html,
 body {
-  background: var(--ink);
-  color: #ffffff;
+  background: #ffffff;
+  color: var(--ink);
   -webkit-font-smoothing: antialiased;
 }
 
 @layer components {
   /* Dégradé animé "propulsé par l'IA" — palette bleue/blanche */
   .ai-gradient-text {
-    background: linear-gradient(90deg, #1e3a73, #3b6fd9, #ffffff, #1e3a73);
+    background: linear-gradient(90deg, #1e3a73, #3b6fd9, #1e3a73, #3b6fd9);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     background-clip: text;

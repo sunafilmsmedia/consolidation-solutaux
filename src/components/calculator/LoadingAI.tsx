@@ -22,7 +22,7 @@ export default function LoadingAI() {
   return (
     <div className="flex min-h-[60vh] flex-col items-center justify-center px-6 text-center">
       <div className="relative mb-8 h-20 w-20">
-        <div className="absolute inset-0 animate-spin rounded-full border-4 border-white/10 border-t-ai" />
+        <div className="absolute inset-0 animate-spin rounded-full border-4 border-ink/10 border-t-ai" />
         <div className="absolute inset-0 flex items-center justify-center text-2xl">⚡</div>
       </div>
       <h2 className="ai-gradient-text text-2xl font-extrabold">{STEPS[index]}</h2>
@@ -31,7 +31,7 @@ export default function LoadingAI() {
           <span
             key={i}
             className={`h-2 w-2 rounded-full transition ${
-              i <= index ? "bg-ai" : "bg-white/15"
+              i <= index ? "bg-ai" : "bg-ink/15"
             }`}
           />
         ))}
